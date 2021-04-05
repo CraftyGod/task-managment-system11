@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 1.75em;
+  background-color: #CFCFCF;
+}
+
+.navbar-header.navbar-right.pull-right {
+  margin-right: 15px;
+  display: inline;
+}
+
+.navbar-right > li {
+  float: left;
+}
+
+.buffer-top {
+  margin-top: 2em;
+}
+
+
+.task {
+  margin:0.6em;
+  padding-top: 0.4em;
+  padding-left: 0.5em;
+
+  .action {
+    font-size: 1.2em;
+    float: right;
+    margin-right: 1.2em;
+    opacity: 0.3;
+  }
+
+  &:hover .action{
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+
+.completed_true {color: #c0c0c0; text-decoration: line-through}
+
+.navbar-brand{
+  font-size: 1.4em;
+  color: black;
+}
+
+.devise-form {
+  margin: 0 auto;
+  transform: scale(1.1, 1);
+}
+
+#article1 {
+  width: 100%;
+  margin-left: 1em;
+}
+
+.fields {
+  margin-top: 1.2em;
+}
+
+.field {
+  margin-top: 1.2em;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+}
+
+
+.actions {
+  margin-top: 1.2em;
+  margin-left: 1.2em;
+}
+
+.links {
+  margin-top: 2em;
+  margin-left: 1.2em;
+  width: 100%;
+}
+
+a {
+  color: #000000;
+}
+
+
