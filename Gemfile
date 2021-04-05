@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'sassc-rails'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 gem 'puma', '~> 5.0'
 gem 'webpacker', '~> 5.0'
@@ -17,6 +18,7 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'openssl', '~> 2.2'
+gem 'rexml'
 
 group :assets do
   gem 'sass-rails', '~> 6.0'
