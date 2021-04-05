@@ -1,25 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/tasks">Tasks</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? %>
-
-          <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark ml-2' %>
-          </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Register', new_user_registration_path, class: 'btn btn-outline-dark ml-2' %>
-            </li>
-          <li class="nav-item">
-            <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-dark ml-2' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <a class="navbar-brand" href="#">Tasks</a>
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark ml-2' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Register', new_user_registration_path, class: 'btn btn-outline-dark ml-2' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-dark ml-2' %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>
+<style>
+  .container-fluid {
+      display: flex;
+      justify-content: space-between;
+  }
+  .navbar-nav {
+      display: flex;
+      flex-direction: row;
+  }
+  .nav-item {
+      margin-right: 10px;
+  }
+  .nav-item:last-of-type {
+      margin-right: 0;
+  }
+</style>
