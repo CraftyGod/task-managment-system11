@@ -5,7 +5,6 @@
     <p><%= f.input :due_date, as: :date, html5: true %></p>
     <p><%= f.input :description, :as => :text %></p>
     <p><%= f.input :completed %></p>
-    <p><%= f.button :submit, class: "btn btn-outline-success" %></p>
-    <p><%= link_to "Cancel", :back, class: "btn btn-outline-dark" %></p>
+    <p><%= f.button :submit, class: "btn btn-outline-success" %> <%= link_to "Cancel", :back, class: "btn btn-outline-dark" %></p>
     <% end %>
 </div>
