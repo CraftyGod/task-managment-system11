@@ -13,7 +13,7 @@ Rails.application.configure do
     :port => 465,
     :domain => 'heroku.com',
     :user_name => 'oksanarooban@gmail.com',
-    :password => 'craftygodtitan2000070531',
+    :password => 'rurgidohtguihdvz',
     :authentication => 'plain',
     :ssl => true,
     :tsl => true,
