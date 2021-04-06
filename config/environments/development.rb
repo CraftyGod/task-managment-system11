@@ -17,8 +17,7 @@ Rails.application.configure do
     :authentication => 'plain',
     :ssl => true,
     :tsl => true,
-    :enable_starttls_auto => true,
-    :openssl_verify_mode  => 'none'
+    :enable_starttls_auto => true
   }
 
   config.action_mailer.default_options = { from: 'oksanarooban@gmail.com' }
