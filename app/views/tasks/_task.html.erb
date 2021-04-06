@@ -1,6 +1,7 @@
 <div class="task priority_<%= task.priority %> completed_<%= task.completed %>" xmlns="http://www.w3.org/1999/html">
   <p>
     <span class="title"><%= link_to task.title, edit_task_path(task) %></span>
+    <span class="badge badge-pill badge-dark"><%= task.priority %></span>
     <% if task.completed == false %>
       <%= link_to content_tag('span', '', class: 'fa fa-square-o'), complete_task_path(task), data: {method: :put}, class: 'action' %>
     <% else %>
