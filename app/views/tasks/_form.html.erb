@@ -2,7 +2,7 @@
   <%= simple_form_for @task do |f| %>
     <p><%= f.input :title %></p>
     <p><%= f.input :priority, placeholder: "Please select number from 1 to 10" %></p>
-    <p><%= f.input :due_date, as: :date, html5: true, min: Time.now() %></p>
+    <p><%= f.input :due_date, as: :date, html5: true %></p>
     <p><%= f.input :description, :as => :text %></p>
     <p><%= f.input :completed %></p>
     <p><%= f.button :submit, class: "btn btn-outline-success" %></p>
