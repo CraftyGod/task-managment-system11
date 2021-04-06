@@ -98,4 +98,18 @@ a {
   color: #000000;
 }
 
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+.nav-item {
+  margin-right: 10px;
+}
+.nav-item:last-of-type {
+  margin-right: 0;
+}
 
