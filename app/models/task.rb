@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   #   ['Now', 3]
   # ]
 
-  validates :priority, numericality: { bigger_than: 0 }
+  validates :priority, numericality: { greater_than_or_equal_to: 0, less_than: 10 }
 
   def complete!
     if self.completed == false
