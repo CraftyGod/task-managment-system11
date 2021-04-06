@@ -12,15 +12,15 @@ Rails.application.configure do
     :address => 'smtp.gmail.com',
     :port => 465,
     :domain => 'heroku.com',
-    :user_name => 'oksanarooban@gmail.com',
-    :password => 'rurgidohtguihdvz',
+    :user_name => 'taskmanagmentsystem11@gmail.com',
+    :password => 'TaskManagmentSys11',
     :authentication => 'plain',
     :ssl => true,
     :tsl => true,
     :enable_starttls_auto => true
   }
 
-  config.action_mailer.default_options = { from: 'oksanarooban@gmail.com' }
+  config.action_mailer.default_options = { from: 'taskmanagmentsystem11@gmail.com' }
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
