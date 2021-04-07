@@ -10,13 +10,15 @@
       <p><%= f.input :priority,
                      required: true,
                      placeholder: "Please select/input number from 1 to 10",
-                     min: 0,
-                     max: 11 %></p>
+                     numericality: { only_integer: true,
+                                     greater_than_or_equal_to: 0 ,
+                                     less_than: 11},
+                     error: "Please comply with the conditions" %></p>
       <p><%= f.date_field :due_date,
                      as: :date,
                      html5: true, min: Date.today,
                      required: true,
-                     error: 'Please, choose date later than today'%></p>
+                     error: 'Please choose date later than today'%></p>
       <p><%= f.input :description,
                      :as => :text,
                      required: true,
