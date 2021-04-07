@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
   def index
-    @task = Task.all
     if user_signed_in?
       @tasks = current_user.tasks.where(completed: false).order('priority DESC')
       @completed_tasks = current_user.tasks.where(completed: true).order('updated_at')
