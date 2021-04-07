@@ -9,9 +9,9 @@
                      error: 'This field cannot be empty' %></p>
       <p><%= f.input :priority,
                      placeholder: "Please select/input number from 1 to 10" %></p>
-      <p><%= f.input :due_date,
+      <p><%= f.date_field :due_date,
                      as: :date,
-                     html5: true,
+                     html5: true, min: Date.today,
                      required: true,
                      error: 'Please, choose date later than today'%></p>
       <p><%= f.input :description,
