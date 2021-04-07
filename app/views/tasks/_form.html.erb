@@ -12,6 +12,7 @@
       <p><%= f.input :due_date,
                      as: :date,
                      html5: true,
+                     required: true,
                      min: Date.today,
                      error: 'Please, choose date later than today'%></p>
       <p><%= f.input :description,
