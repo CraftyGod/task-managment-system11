@@ -12,14 +12,15 @@
       <p><%= f.input :due_date,
                      as: :date,
                      html5: true,
-                     min: Date.today%></p>
+                     min: Date.today,
+                     error: 'Please, choose date later than today'%></p>
       <p><%= f.input :description,
                      :as => :text,
                      required: true,
                      error: 'This field cannot be empty' %></p>
       <p><%= f.input :completed %></p>
       <p><%= f.button :submit,
-                      class: "btn btn-outline-success" %>
+                      class: "btn btn-outline-success" %>t
         <%= link_to "Cancel",
                     :back,
                     class: "btn btn-outline-dark" %></p>
