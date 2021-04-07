@@ -12,7 +12,8 @@
       <p><%= f.input :due_date,
                      as: :date,
                      html5: true,
-                     min: Date.today,
+                     min: Time.now,
+                     value: f.object.try(:strftime,"%d/%m/%Y"),
                      error: 'Please, choose date later than today'%></p>
       <p><%= f.input :description,
                      :as => :text,
