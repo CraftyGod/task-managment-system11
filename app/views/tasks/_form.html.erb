@@ -1,10 +1,11 @@
 <div class="col-md-6">
   <%= simple_form_for @task do |f| %>
-    <p><%= f.input :title, required: true, error: 'This field cannot be empty' %></p>
-    <p><%= f.input :priority, placeholder: "Please select number from 1 to 10" %></p>
-    <p><%= f.input :due_date, as: :date, html5: true %></p>
-    <p><%= f.input :description, :as => :text, required: true, error: 'This field cannot be empty' %></p>
-    <p><%= f.input :completed %></p>
-    <p><%= f.button :submit, class: "btn btn-outline-success" %> <%= link_to "Cancel", :back, class: "btn btn-outline-dark" %></p>
+    <% f.error_notification %>
+      <p><%= f.input :title, required: true, error: 'This field cannot be empty' %></p>
+      <p><%= f.input :priority, placeholder: "Please select number from 1 to 10" %></p>
+      <p><%= f.input :due_date, as: :date, html5: true %></p>
+      <p><%= f.input :description, :as => :text, required: true, error: 'This field cannot be empty' %></p>
+      <p><%= f.input :completed %></p>
+      <p><%= f.button :submit, class: "btn btn-outline-success" %> <%= link_to "Cancel", :back, class: "btn btn-outline-dark" %></p>
     <% end %>
 </div>
