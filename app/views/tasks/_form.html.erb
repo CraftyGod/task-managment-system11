@@ -13,7 +13,7 @@
                      as: :date,
                      html5: true,
                      required: true,
-                     min: Date.today,
+                     min: Time.now(),
                      error: 'Please, choose date later than today'%></p>
       <p><%= f.input :description,
                      :as => :text,
