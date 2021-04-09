@@ -19,5 +19,5 @@ class Task < ApplicationRecord
     end
     save
   end
-  
+
 end
