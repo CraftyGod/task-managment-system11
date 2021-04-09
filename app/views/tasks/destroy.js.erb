@@ -1,1 +1,2 @@
-console.log("Called from destroy.js.erb");
+var element = document.getElementById("task<%= @task.id %>")
+element.remove();
