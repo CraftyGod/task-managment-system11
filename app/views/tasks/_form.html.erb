@@ -5,27 +5,23 @@
 
     <div class="form-inputs">
       <p><%= f.input :title,
-                     required: true,
-                     error: 'This field cannot be empty' %></p>
+                     required: true%></p>
       <p><%= f.input :priority,
                      required: true,
                      :gt => 0,
                      :lt => 11,
-                     placeholder: "Please select/input number from 1 to 10",
-                     error: 'Please select/input number from 1 to 10' %></p>
+                     placeholder: "Please select/input number from 1 to 10" %></p>
       <p><%= f.date_field :due_date,
                      as: :date,
                      html5: true, min: Date.today,
-                     required: true,
-                     error: 'Please, choose date later than today'%></p>
+                     required: true %></p>
       <p><%= f.input :description,
                      :as => :text,
-                     required: true,
-                     error: 'This field cannot be empty' %></p>
+                     required: true %></p>
       <p><%= f.input :completed %></p>
       <p><%= f.button :submit,
                       class: "btn btn-outline-success" %>
-        <%= link_to "Cancel",
+        <%= link_to "Back",
                     :back,
                     class: "btn btn-outline-dark" %></p>
       <% end %>
