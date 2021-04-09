@@ -3,12 +3,6 @@
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
-      <p><%= f.input :firstName,
-                  required: true,
-                     autofocus: true%></p>
-      <p><%= f.input :lastNname,
-                  required: true,
-                     autofocus: true%></p>
       <p><%= f.input :email,
                   required: false,
                   autofocus: true,
