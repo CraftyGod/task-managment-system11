@@ -8,4 +8,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstName, :lastName, :email, :password, :password_confirmation, :current_password) }
   end
 
+  protected
+
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to login_path
+    end
+  end
 end
