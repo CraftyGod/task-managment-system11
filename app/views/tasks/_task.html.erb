@@ -7,7 +7,7 @@
     <% else %>
       <%= link_to content_tag('span', '', class: 'fa fa-check-square-o'), complete_task_path(task), data: {method: :put}, class: 'done action' %>
     <% end %>
-    <%= link_to content_tag('span', '', class: 'fa fa-trash'), task, method: :delete, class: 'delete' %>
+    <%= link_to content_tag('span', '', class: 'fa fa-trash'), task, method: :delete, data: {confirm: 'Are u sure?', remote: true}, class: 'delete' %>
     <%= link_to content_tag('span', '', class: 'fa fa-pencil'), edit_task_path(task), class: 'action' %>
   </p>
 </div>
