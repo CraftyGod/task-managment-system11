@@ -10,14 +10,14 @@ class Task < ApplicationRecord
   validates_presence_of :priority, presence: true, numericality: { greater_than: 0, less_than: 11, other_than: 0 }
 
 
-  def complete!
-    if self.completed == false
-      self.completed = true
-      save
-    else
-      self.completed = false
-      save
-    end
-  end
 
+  def complete!
+    if self.completed?
+    self.completed = false
+  else
+    self.completed = true
+    end
+    save
+  end
+  
 end
