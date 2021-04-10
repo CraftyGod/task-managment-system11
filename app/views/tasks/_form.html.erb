@@ -8,7 +8,7 @@
                      required: true%></p>
       <p><%= f.input :priority,
                      required: true,
-                     :numericality => true,
+                     :collection => 1..10,
                      placeholder: "Please select/input priority" %></p>
       <p><%= f.date_field :due_date,
                      as: :date,

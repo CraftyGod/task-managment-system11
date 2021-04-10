@@ -20,6 +20,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'openssl', '~> 2.2'
 gem 'rexml'
 
+
 group :assets do
   gem 'sass-rails', '~> 6.0'
 end
