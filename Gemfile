@@ -31,6 +31,8 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec', '~> 3.10'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 end
 
 group :development do
