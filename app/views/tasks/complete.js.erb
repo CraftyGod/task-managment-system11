@@ -1,7 +1,6 @@
-//var element = document.getElementById("task<%= @task.id %>")
-//element.complete()
+var element = document.getElementById("task<%= @task.id %>")
 <% if @task.complete? %>
-$('#edit_task_<%= @task.id %>').appendTo('#tasks');
+element.appendTo('#tasks');
 <% else %>
-$('#edit_task_<%= @task.id %>').appendTo('#completed_tasks');
+element.appendTo('#completed_tasks');
 <% end %>
