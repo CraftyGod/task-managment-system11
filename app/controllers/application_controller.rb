@@ -9,8 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   # before_action :require_login, :except => [:new, :create]
-  #
-  private
+  
 
   def require_login
     unless user_signed_in?
