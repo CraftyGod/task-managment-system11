@@ -12,6 +12,18 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstName, :lastName, :email, :password, :password_confirmation, :current_password) }
   end
 
+  def authenticate_user!(options = {})
+    head :unauthorized unless signed_in?
+  end
+
+  def current_user
+    @current_user ||= super || User.find(@current_user_id)
+  end
+
+  def signed_in?
+    @current_user_id.present?
+  end
+
   def authenticate_user
     if request.headers['Authorization'].present?
       authenticate_or_request_with_http_token do |token|
