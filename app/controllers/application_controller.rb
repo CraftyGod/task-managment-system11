@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstName, :lastName, :email, :password, :password_confirmation, :current_password) }
   end
 
-  skip_before_action :require_login, :only => [:new, :create]
+  skip_before_action :require_login
 
   private
 
