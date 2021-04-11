@@ -26,8 +26,13 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find(params[:id])
 
     @task.update(task_params)
+    respond_to do |format|
+      format.html {redirect_to tasks_path}
 
-    redirect_to tasks_path
+      format.json {head :no_content}
+
+      format.js
+    end
   end
 
   def complete
