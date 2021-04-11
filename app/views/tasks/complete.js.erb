@@ -1,8 +1,6 @@
-
+var element = document.getElementById("task<%= @task.id %>")
 <% if @task.complete? %>
-var element = document.getElementById("task<%= @task.id %>");
 element.appendTo('#tasks');
 <% else %>
-var element = document.getElementById("task<%= @task.id %>");
 element.appendTo('#completed_tasks');
 <% end %>
