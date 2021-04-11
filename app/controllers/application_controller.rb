@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?; :require_login
 
   protected
 
@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
 
   # before_action :require_login, :except => [:new, :create]
   #
-  # private
-  #
-  # def require_login
-  #   unless user_signed_in?
-  #     redirect_to new_user_session_url
-  #   end
-  # end
+  private
+
+  def require_login
+    unless user_signed_in?
+      redirect_to new_user_session_url
+    end
+  end
 end
