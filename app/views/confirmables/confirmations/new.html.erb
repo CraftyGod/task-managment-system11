@@ -1,22 +1,24 @@
 <div class="col-md-6">
+  <div class="article1">
   <h2>Resend confirmation instructions</h2>
-
+  </div>
+  <div class="fields">
   <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
     <%= f.full_error :confirmation_token %>
 
-    <div class="form-inputs">
+      <div class="field">
       <%= f.input :email,
                   required: true,
                   autofocus: true,
                   value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
                   input_html: { autocomplete: "email" } %>
-    </div>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Resend confirmation instructions" %>
+    <div class="actions">
+      <%= f.button :submit, "Resend confirmation instructions", class: "btn btn-outline-black" %>
     </div>
   <% end %>
-
+  </div>
   <%= render "confirmables/shared/links" %>
 </div>
