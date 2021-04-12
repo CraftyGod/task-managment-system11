@@ -1,41 +1,22 @@
 class ApplicationController < ActionController::Base
-
-  respond_to :json
-
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user
 
-  private
+  protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:firstName, :lastName, :email, :password, :password_confirmation) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstName, :lastName, :email, :password, :password_confirmation, :current_password) }
   end
 
-  def authenticate_user!(options = {})
-    head :unauthorized unless signed_in?
-  end
-
-  def current_user
-    @current_user ||= super || User.find(@current_user_id)
-  end
-
-  def signed_in?
-    @current_user_id.present?
-  end
-
-  def authenticate_user
-    if request.headers['Authorization'].present?
-      authenticate_or_request_with_http_token do |token|
-        begin
-          jwt_payload = JWT.decode(token, Rails.application.secrets.secret_key_base).first
-
-          @current_user_id = jwt_payload['id']
-        rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
-          head :unauthorized
-        end
-      end
-    end
-  end
-
+  # before_action :require_login, :except => [:new, :create]
+  #
+  # private
+  #
+  # def require_login
+  #   unless user_signed_in?
+  #     redirect_to new_user_session_url
+  #   end
+  # end
+  #
+  #
 end
