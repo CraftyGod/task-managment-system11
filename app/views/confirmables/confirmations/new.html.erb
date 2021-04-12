@@ -1,7 +1,8 @@
-<div class="col-md-6">
-  <div class="article1">
-  <h2>Resend confirmation instructions</h2>
+<div class="devise-form">
+  <div id="article1">
+    <h2>Resend confirmation instructions</h2>
   </div>
+
   <div class="fields">
   <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
