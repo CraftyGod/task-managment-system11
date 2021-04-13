@@ -35,14 +35,20 @@ class TasksController < ApplicationController
 
     @task.complete!
 
-    redirect_to tasks_path
+    respond_to do |format|
+      format.html { redirect_to tasks_path, notice: 'Task was successfully destroyed.' }
 
+      format.json { head :no_content }
+
+      format.js
+    end
   end
 
   def destroy
     @task = current_user.tasks.find(params[:id])
 
     @task.destroy
+
     respond_to do |format|
       format.html { redirect_to tasks_path, notice: 'Task was successfully destroyed.' }
 

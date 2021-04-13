@@ -1,0 +1,16 @@
+$(".checkbox").on('click', function() {
+    $.ajax({
+        url: '/tasks/' + this.value + '/complete',
+        context: this,
+        type: 'put',
+        data: {"completed": this.checked},
+        success: function (response) {
+            if (this.checked) {
+                $('element-id-' + this.value).addClass('done'); // this.checked === true
+            } else {
+                $('element-id-' + this.value).removeClass('done'); // this.checked === false
+            }
+
+        }.bind(this)
+    });
+});
