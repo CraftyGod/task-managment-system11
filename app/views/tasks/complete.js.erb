@@ -1,16 +1,29 @@
-$(".checkbox").on('click', function() {
-    $.ajax({
-        url: '/tasks/' + this.value + '/complete',
-        context: this,
-        type: 'put',
-        data: {"completed": this.checked},
-        success: function (response) {
-            if (this.checked) {
-                $('task.id' + this.value).addClass('action'); // this.checked === true
-            } else {
-                $('task.id' + this.value).removeClass('done action'); // this.checked === false
-            }
-
-        }.bind(this)
-    });
+$(".task-check").bind('change', function(){
+    if (this.checked){
+        $.ajax({
+            url: '/tasks/'+this.value+'/complete',
+            type: 'PUT',
+            data: {"completed": this.checked}
+        });
+    }
+    else {
+        alert("no");
+    }
 });
+
+//$(".task-check").on('click', function() {
+//    $.ajax({
+//        url: '/tasks/' + this.value + '/complete',
+//        context: this,
+//        type: 'put',
+//        data: {"completed": this.checked},
+//        success: function (response) {
+//            if (this.checked) {
+//                $('task.id' + this.value).addClass('action'); // this.checked === true
+//            } else {
+//                $('task.id' + this.value).removeClass('done action'); // this.checked === false
+//            }
+
+//        }.bind(this)
+//    });
+//});
