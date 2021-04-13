@@ -3,7 +3,10 @@
     <span class="title"><%= link_to task.title, edit_task_path(task) %></span>
     <span class="badge badge-pill badge-dark"><%= task.priority %></span>
     <% if task.completed == false %>
-          <%= link_to content_tag('span', '', class: 'fa fa-square-o'), complete_task_path(task), data: {method: :put, remote: true}, class: 'action' %>
+          <%= link_to content_tag('span', '', class: 'fa fa-square-o'), complete_task_path(task), data: {
+            method: :put,
+            remote: true,
+            url: url_for(action: :complete, id: task.id)}, class: 'action' %>
     <% else %>
           <%= link_to content_tag('span', '', class: 'fa fa-check-square-o'), complete_task_path(task), data: {method: :put, remote: true}, class: 'done action' %>
     <% end %>
