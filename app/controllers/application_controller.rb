@@ -8,13 +8,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstName, :lastName, :email, :password, :password_confirmation, :current_password) }
   end
 
-  before_action :require_login, :except => [:login]
+  before_action :authenticate_user!
 
-  private
-
-  def require_login
-    unless user_signed_in?
-      redirect_to new_user_session_url
-    end
-  end
 end
