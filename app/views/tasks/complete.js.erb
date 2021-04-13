@@ -6,9 +6,9 @@ $(".checkbox").on('click', function() {
         data: {"completed": this.checked},
         success: function (response) {
             if (this.checked) {
-                $('task.id' + this.value).addClass('done'); // this.checked === true
+                $('task.id' + this.value).addClass('action'); // this.checked === true
             } else {
-                $('task.id' + this.value).removeClass('done'); // this.checked === false
+                $('task.id' + this.value).removeClass('done action'); // this.checked === false
             }
 
         }.bind(this)
