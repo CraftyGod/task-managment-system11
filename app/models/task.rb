@@ -8,9 +8,9 @@ class Task < ApplicationRecord
   # ]
 
   def complete!
-    self.completed? = completed
+    self.completed = completed
   end
-  
+
   # def complete!
   #   if self.completed?
   #   self.completed = false
